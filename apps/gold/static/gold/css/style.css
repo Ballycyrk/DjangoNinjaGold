@@ -1,0 +1,104 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: fantasy;
+}
+
+#container {
+  width: 970px;
+  height: 770px;
+  margin: 0px auto;
+  background-image: url(../Images/gold.png);
+  background-size: 970px 700px;
+  background-repeat: no-repeat;
+}
+
+#gold {
+  margin-bottom: 20px;
+}
+
+#activity {
+  display: inline-block;
+  margin-left: 12px;
+  width: 920px;
+  height: 205px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+#reset {
+  display: block;
+}
+
+#reset input {
+  width: 325px;
+  height: 55px;
+  font-size: 20px;
+  margin-left: 300px;
+  margin-top: 20px;
+}
+
+.feedback {
+  border: 3px solid black;
+  color: gold;
+  background-color: rgba(204, 204, 204, 0.71);
+}
+
+.location {
+  display: inline-block;
+  width: 220px;
+  height: 220px;
+  margin-left: 11px;
+  vertical-align: top;
+  text-align: center;
+  border: 3px solid black;
+  background-color: rgba(255, 248, 220, 0.81);
+  outline: green solid thin;
+}
+
+.safe {
+  margin-top: 50px;
+}
+
+.win {
+  color: #95FF95;
+  font-size: 12px;
+}
+
+.lose {
+  color: red;
+  font-size: 12px;
+}
+
+.btn  {
+  width: 90px;
+  height: 25px;
+  margin-top: 35px;
+  padding-top: 3px;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 6px 5px 5px gold;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+h4 {
+  display: inline-block;
+  width: 150px;
+  height: 30px;
+  margin-top: 15px;
+  padding-top: 10px;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+h3 {
+  margin: 12px 12px 0px;
+}
+
+
+h2, p {
+  font-weight: bolder;
+}
+

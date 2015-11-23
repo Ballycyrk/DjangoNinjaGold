@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lan='en'>
+  <head>
+    <meta charset='utf-8'>
+    {% load staticfiles %}
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'gold/css/style.css'%}">
+  </head>
+  <body>
+    <div id="container">
+      <div id="gold">
+        <h4>Your Gold:</h4>
+        <h4 class="feedback">{{ request.session.gold }} Gold Pieces</h4>
+      </div>
+      <div class="location">
+        <h4>Farm</h4>
+        <p class="safe">(earns 10 - 20 gold)</p>
+        <form action="{% url 'process' %}" method ="post">
+          {% csrf_token %}
+          <input type="hidden" name="local" value="farm">
+          <input class='btn' type='submit' value='Find Gold'>
+        </form>
+      </div>
+      <div class='location'>
+        <h4>Cave</h4>
+        <p class="safe">(earns 5 - 10 gold)</p>
+        <form action ="{% url 'process' %}" method='post'>
+          {% csrf_token %}
+          <input type='hidden' name='local' value='cave'>
+          <input class="btn" type='submit' value='Find Gold'>
+        </form>
+      </div>
+      <div class="location">
+        <h4>House</h4>
+        <p class='safe'>(earns 2 - 5 gold)</p>
+        <form action="{% url 'process' %}" method='post'>
+          {% csrf_token %}
+          <input type='hidden' name='local' value='house'>
+          <input class='btn' type='submit' value='Find Gold'>
+        </form>
+      </div>
+      <div class="location">
+        <h4>Casino</h4>
+        <p class='safe'>(earn/lose 0 -50 gold)</p>
+        <form action="{% url 'process' %}" method='post'>
+          {% csrf_token %}
+          <input type='hidden' name='local' value='casino'>
+          <input class="btn" type='submit' value='Risk Gold'>
+        </form>
+      </div>
+      <div class="activity">
+        <h3>Activities:</h3>
+        <div id="activity" class='feedback'>
+          {% for result in request.session.activity %}
+           <p class="{{result.0}}">{{ result.1 }} </p>
+          {% endfor %}
+        </div>
+
+      </div>
+      <form id='reset' action="{% url 'reset' %}" method='post'>
+        {% csrf_token %}
+        <input class='btn' type='submit' value='Donate gold and start again?'>
+        </input>
+      </form>
+    </div>
+  </body>
+</html>
